@@ -24,8 +24,12 @@ export default function PDFViewer() {
   }, []);
 
   return (
-    <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.1.81/build/pdf.worker.min.js">
+    // <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.1.81/build/pdf.worker.min.js">
+    <Worker workerUrl="/pdfViewer/worker.js">
       {decodedUrl !== null && <Viewer fileUrl={decodedUrl} />}
     </Worker>
   );
 }
+
+// Test it out
+// http://localhost:3000/pdfViewer/getsamplefiles.com/U2FsdGVkX181VzF2X0LAPYoKlf5jD1qVPyK5VQJSL94vsXsJbZfprJchriYkS7Rd
